@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const roomSchema = new mongoose.Schema({
+
+    roomImage:{
+        type:Array,
+        required:true
+    },
     roomName:{
         type:String,
         required:true

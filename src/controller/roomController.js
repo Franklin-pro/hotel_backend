@@ -5,8 +5,8 @@ import successMessage from '../itills/successMessage';
 
 class roomController{
     static async createRoom(req,res){
-        const {roomName,roomAmount,roomType}=req.body
-        const room = await Room.create({roomName,roomAmount,roomType})
+        const {roomImage,roomName,roomAmount,roomType}=req.body
+        const room = await Room.create({roomImage,roomName,roomAmount,roomType})
         if(!room){
             return errorMessage(res,201,`no room found`)
         }else{
