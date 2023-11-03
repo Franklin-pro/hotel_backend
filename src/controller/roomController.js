@@ -21,5 +21,14 @@ class roomController{
             return successMessage(res,200,`room ${room.length} retrived successfully`,room)
         }
     }
+    static async deleteAllRoom(req,res){
+        const room = await Room.deleteMany()
+        if(!room || room.length==0){
+            return successMessage(res,201,`no rooms deleted`)
+        }
+        else{
+            return successMessage(res,200,`all rooms deleted`)
+        }
+    }
 }
 export default roomController
